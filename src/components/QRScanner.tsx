@@ -25,6 +25,8 @@ const QRScanner: React.FC<QRScannerProps> = ({ onScan, onError }) => {
       onScan(mockInput.trim())
       setMockInput('')
       setIsScanning(false)
+    } else if (onError) {
+      onError('Input is empty. Please provide QR data to scan.')
     }
   }
 
